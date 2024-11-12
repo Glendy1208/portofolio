@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glendy Hernandez's Portofolio</title>
+  <!-- Tambahkan Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+  <!-- Header -->
+  <header class="bg-white shadow p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Glendy Hernandez</h1>
+      <button id="hamburger-btn" class="text-gray-700 md:hidden focus:outline-none" onclick="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+      <nav id="nav-links" class="hidden md:flex space-x-4">
+        <a href="#about" class="mx-2">Tentang</a>
+        <a href="#projects" class="mx-2">Proyek</a>
+        <a href="#certificates" class="mx-2">Sertifikat</a>
+        <a href="#contact" class="mx-2">Kontak</a>
+      </nav>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white p-4">
+      <a href="#about" class="block py-2">Tentang</a>
+      <a href="#projects" class="block py-2">Proyek</a>
+      <a href="#certificates" class="block py-2">Sertifikat</a>
+      <a href="#contact" class="block py-2">Kontak</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto p-6">
+    <!-- About Section -->
+    <section id="about" class="my-10">
+      <div class="text-center">
+        <!-- Foto Profil dan Info Singkat -->
+        <img src="/img/foto_profil.jpg" alt="Foto Profil"  class="mx-auto rounded-full mb-4 max-w-xs object-cover">
+        <h2 class="text-2xl font-bold">Glendy Hernandez</h2>
+        <p class="text-gray-700">Mahasiswa Teknik Informatika</p>
+      </div>
+
+      <!-- Tentang Saya dengan Keterampilan -->
+      <div class="mt-8 text-center md:text-left">
+        <h3 class="text-3xl font-semibold mb-4">Tentang Saya</h3>
+        <p class="text-lg mb-4">Saya adalah seorang mahasiswa Teknik Informatika di Universitas Trunojoyo Madura yang memiliki minat dan keahlian dalam pengembangan web dan machine learning. Saya selalu tertarik mempelajari teknologi baru dan memperdalam pemahaman saya dalam bidang IT.</p>
+        <a href="/file/CV.pdf" download class="mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+          Download CV
+        </a>
+        <!-- Daftar Keahlian -->
+        <h4 class="text-xl font-semibold mt-6 mb-4">Keahlian Saya</h4>
+        <ul class="list-disc list-inside space-y-2 text-lg">
+          <li><strong>Web Development:</strong> Menguasai HTML, CSS, dan JavaScript (basic) beserta forntend framework seperti bootstrap dan tailwind.</li>
+          <li><strong>Backend Development:</strong> Menguasai dasar-dasar PHP dan backend framework seperti laravel, serta MySQL.</li>
+          <li><strong>Machine Learning:</strong> Familiar dengan algoritma dasar machine learning menggunakan Python dan library seperti scikit-learn, TensorFlow, NLTK.</li>
+          <li><strong>Data Analysis:</strong> Mampu melakukan analisis data dasar dengan Python (pandas, numpy) dan visualisasi data menggunakan Matplotlib dan Seaborn.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="my-10">
+      <h2 class="text-3xl font-semibold mb-4 text-center">Proyek Saya</h2>
+      <div class="bg-white p-6 rounded shadow mb-6">
+        <h3 class="text-2xl font-semibold mb-4">Website SiLuni (Sistem Alumni)</h3>
+        <p class="text-lg">Saya dan kelompok saya mengembangkan website yang nantinya (digunakan tahun depan) akan digunakan oleh Alumni dan Pengurus Prodi Teknik Informatika Universitas Trunojoyo dalam berbagi informasi mengenai pekerjaan, webinar, dan lainnya melalui postingan dalam website. Selain itu website ini juga digunakan dalam mencari informasi tentang alumni, dan masih banyak fitur lainnya. Website ini dibuat menggunakan Laravel 11.</p>
+        <p class="text-lg">Link website : <a href="https://siluni.sakera.id/" class="text-blue-500" target="_blank">https://siluni.sakera.id/</a></p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded shadow">
+          <img src="/img/foto-web/list-alumni.png" alt="Homepage Screenshot" class="rounded mb-4">
+          <h4 class="text-lg font-semibold">Tampilan List Alumni</h4>
+          <p>Halaman ini digunakan untuk mencari alumni lain dari berbagai angkatan. Pada halaman ini juga disediakan fitur search untuk memudahkan dalam pencarian alumni yang dapat dicari berdasarkan nama, angkatan, dan pekerjaannya.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <img src="/img/foto-web/view-profil-alumni.png" alt="Dashboard Screenshot" class="rounded mb-4">
+          <h4 class="text-lg font-semibold">Halaman Profil Alumni</h4>
+          <p>Halam ini adalah halaman ketika alumni melihat profil dari alumni lainnya, halaman ini menampilkan biodata, nomor telepon, sosial media, dan riwayat pekerjaan sesuai dengan profil yang sudah diinputkan alumni pada halaman edit profil.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <img src="/img/foto-web/postingan.png" alt="Portal Screenshot" class="rounded mb-4">
+          <h4 class="text-lg font-semibold">Halaman Postingan</h4>
+          <p>Halaman Postingan adalah halaman dimana para alumni bisa melihat informasi-informasi bermanfaat seperti lowongan pekerjaan, webinar, pelatihan, dls yang diposting oleh prodi teknik informatika atau laumni lainnya.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="my-10">
+      <h2 class="text-3xl font-semibold mb-4 text-center">Sertifikat</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white p-4 rounded shadow">
+          <img src="/img/ml_pemula.png" alt="Certificate Beginner" class="rounded mb-4">
+          <h3 class="text-xl font-semibold">Machine Learning Bootcamp - Level Pemula</h3>
+          <p>Sertifikat dari Dicoding bootcamp machine learning untuk pemula yang mencakup dasar-dasar machine learning mulai dari pengertian machine learning, data understanding, preprocessing, dan melatih berbagai model dengan library Python.</p>
+        </div>
+        <div class="bg-white p-4 rounded shadow">
+          <img src="/img/ml_menengah.png" alt="Certificate Intermediate" class="rounded mb-4">
+          <h3 class="text-xl font-semibold">Machine Learning Bootcamp - Level Menengah</h3>
+          <p>Sertifikat dari Dicoding bootcamp machine learning tingkat menengah dengan membahas dengan lebih detil dari Jaringan Syaraf Tiruan beserta penggunaanya dalam kasus Klasifikasi, Regresi, Forecasting, Pemrosesan Bahasa Alami, Sistem Rekomendasi, dan Generative AI.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="my-10 text-center">
+      <h2 class="text-3xl font-semibold mb-4">Kontak</h2>
+      <p class="text-lg">Jika ada pertanyaan tentang saya, silakan hubungi saya melalui email: <a href="mailto:glendyhernandezpmg@gmail.com" class="text-blue-500">glendyhernandezpmg@gmail.com</a></p>
+      <p class="text-lg">Atau kunjungi profil LinkedIn saya: <a href="https://www.linkedin.com/in/example" class="text-blue-500" target="_blank">LinkedIn</a></p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white shadow p-4 mt-10">
+    <p class="text-center">&copy; 2024 Created By Glendy Hernandez</p>
+  </footer>
+
+  <!-- JavaScript for Mobile Menu -->
+  <script>
+    function toggleMenu() {
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenu.classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
