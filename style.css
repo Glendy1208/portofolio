@@ -632,10 +632,135 @@ section {
     transform: scale(1.05);
 }
 
+/* Live Demo Button & Tools Section */
+.live-demo-btn {
+    margin-top: 1.5rem;
+    margin-right: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.live-demo-btn:hover {
+    transform: translateY(-3px);
+}
+
+.tools-used {
+    margin-top: 2rem;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.tools-used h4 {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.tools-icons {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tool-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: rgba(102, 126, 234, 0.05);
+}
+
+.tool-item:hover {
+    background: rgba(102, 126, 234, 0.15);
+    transform: translateY(-5px);
+}
+
+.tool-item i {
+    font-size: 2rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.tool-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    transition: var(--transition);
+}
+
+.tool-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+}
+
+/* Thumbnail Grid Styles (16:9 aspect ratio for YouTube thumbnails) */
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+}
+
+.thumbnail-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.thumbnail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.thumbnail-image {
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625 = 56.25%) */
+    position: relative;
+    overflow: hidden;
+}
+
+.thumbnail-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.thumbnail-card:hover .thumbnail-image img {
+    transform: scale(1.05);
 }
 
 .project-card {
@@ -685,6 +810,11 @@ section {
 }
 
 .project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+/* Thumbnail Card Overlay */
+.thumbnail-card:hover .project-overlay {
     opacity: 1;
 }
 
@@ -1058,6 +1188,30 @@ section {
     .close {
         top: -40px;
         font-size: 2rem;
+    }
+
+    /* Responsive Tools Section */
+    .tools-icons {
+        gap: 1rem;
+        justify-content: center;
+    }
+    
+    .tool-item {
+        padding: 0.8rem;
+    }
+    
+    .tool-logo {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .tool-item span {
+        font-size: 0.8rem;
+    }
+    
+    .live-demo-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
 
