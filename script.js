@@ -1,10 +1,15 @@
 // Loading Screen
 window.addEventListener('load', () => {
     const loadingScreen = document.querySelector('.loading-screen');
+    document.body.style.overflow = 'hidden';
     setTimeout(() => {
         loadingScreen.classList.add('hidden');
+        document.body.style.overflow = '';
     }, 2000);
 });
+
+// Prevent scrolling on initial page load (before load event)
+document.body.style.overflow = 'hidden';
 
 // Navbar Scroll Effect
 window.addEventListener('scroll', () => {
