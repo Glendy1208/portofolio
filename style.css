@@ -1126,6 +1126,10 @@ section {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    * {
+        max-width: 100%;
+    }
+    
     .hamburger {
         display: flex;
     }
@@ -1143,6 +1147,7 @@ section {
         padding-top: 2rem;
         transition: var(--transition);
         box-shadow: var(--shadow-medium);
+        overflow-x: hidden;
     }
     
     .nav-menu.active {
@@ -1155,6 +1160,8 @@ section {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .hero-title {
@@ -1171,6 +1178,8 @@ section {
     
     .projects-grid {
         grid-template-columns: 1fr;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .certificates-grid {
@@ -1234,8 +1243,14 @@ section {
 }
 
 @media (max-width: 480px) {
+    * {
+        max-width: 100%;
+    }
+    
     .container {
         padding: 0 15px;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     .hero-title {
@@ -1248,6 +1263,8 @@ section {
     
     .hero-image {
         height: 300px;
+        width: 100%;
+        overflow: hidden;
     }
     
     .profile-container {
