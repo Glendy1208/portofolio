@@ -543,20 +543,26 @@ additionalStyles.textContent = `
         .nav-menu {
             position: fixed;
             top: 80px;
-            left: -100%;
+            left: 0;
             width: 100%;
             height: calc(100vh - 80px);
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             gap: 2rem;
-            transition: left 0.3s ease;
+            padding-top: 2rem;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s ease, opacity 0.4s ease;
+            transform: translateY(-100%);
+            visibility: hidden;
+            opacity: 0;
         }
         
         .nav-menu.active {
-            left: 0;
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
         }
         
         .nav-link {
